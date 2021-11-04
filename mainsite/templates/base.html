@@ -1,0 +1,27 @@
+{% load static %}
+<html lang="ru">
+    <head>
+        {% load static %}
+        <title>Base</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <script src="{% static 'js/blog.js' %}"></script>
+    </head>
+    <body>
+    <header></header>
+    <nav>
+
+          {% if user.is_authenticated %}
+              <button type="sumbit" onclick="location.href='{% url 'logout' %}'">Выход</button>
+              <a href="{% url 'apps_list' %}">Apps</a>
+          {% else %}
+            <button type="sumbit" onclick="location.href='{% url 'login' %}'" >Войти</button>
+{#            <button type="sumbit" onclick="location.href='{% url 'signup' %}'">Регистрация</button>#}
+          {% endif %}
+    </nav>
+    {% block content %}
+    {% endblock %}
+    </body>
+</html>
