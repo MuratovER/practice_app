@@ -20,7 +20,7 @@ def home_page(request):
 def blog_page(request):
     posts = Post.objects.all()
 
-    return render(request, 'blog/blog.html', {"posts": posts})
+    return render(request, 'blog/main_blog.html', {"posts": posts})
 
 
 @login_required
