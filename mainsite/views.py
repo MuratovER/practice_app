@@ -28,6 +28,10 @@ def blog_page(request):
     return render(request, 'blog/main_blog.html', {"posts": posts})
 
 
+def programming(request):
+    return render(request, 'programming/main_code.html')
+
+
 def code_examples(request):
     check_for_project_list()
     projects = CodeExamples.objects.all()

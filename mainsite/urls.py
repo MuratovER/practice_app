@@ -18,6 +18,7 @@ urlpatterns = [
     path('apps_list/blog/comment/<int:pk>/approve/', views.comment_approve, name='comment_approve'),
     path('apps_list/blog/comment/<int:pk>/remove/', views.comment_remove, name='comment_remove'),
     path('apps_list/programming/code_examples/', views.code_examples, name='code_examples'),
+    path('apps_list/programming/', views.programming, name='programming'),
     # path('apps_list/blog/post/<int:pk>/like/$',login_required(views.VotesView.as_view(model=Post, vote_type=LikeDislike.LIKE)),
     #     name='post_like'),
     # path('apps_list/blog/post/<int:pk>/dislike/$',login_required(views.VotesView.as_view(model=Post, vote_type=LikeDislike.DISLIKE)),
