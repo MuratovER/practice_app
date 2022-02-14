@@ -10,7 +10,7 @@ from django.views import View
 from rest_framework.utils import json
 
 from mainsite.forms import PostForm, CommentForm
-from mainsite.models import Post, Comment, LikeDislike, CodeExamples
+from mainsite.models import Post, Comment, LikeDislike, CodeExamples, EulerProblem
 from mainsite.services.services_code_example import check_for_project_list
 
 
@@ -27,6 +27,13 @@ def blog_page(request):
 
     return render(request, 'blog/main_blog.html', {"posts": posts})
 
+
+def programming(request):
+    return render(request, 'programming/main_code.html')
+
+def euler_problems(request):
+    problems = EulerProblem.objects.all()
+    return render(request, 'programming/eulerproblems.html', {'problems': problems})
 
 def code_examples(request):
     check_for_project_list()

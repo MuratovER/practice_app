@@ -7,7 +7,7 @@ from mainsite.models import CodeExamples
 def find_projects():
     github = requests.get('https://github.com/MuratovER?tab=repositories')
     html = github.text
-    HOST = 'https://github.com/MuratovER/ts'
+    HOST = 'https://github.com'
     soup = BeautifulSoup(html, 'html.parser')
     items = soup.find_all('li', class_='col-12 d-flex width-full py-4 border-bottom color-border-muted public source')
     projects = []
