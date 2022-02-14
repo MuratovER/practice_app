@@ -1,0 +1,57 @@
+
+.wrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 9.2%;
+    background-color: #323232;
+}
+
+[class*="__container"]
+{
+    max-width: 1720px;
+    margin: 0px auto;
+}
+
+.header {
+    
+    display: flex;
+    font-size: 24px;
+    justify-content: center;
+    letter-spacing: 1px;
+    margin: auto;
+    
+}
+.header__container {
+    display: grid;
+    grid-column-gap: 150px;
+    grid-template-columns: auto auto auto;
+    padding: 1px;
+}
+.header__programming {
+    
+}
+.header__blog {
+    
+}
+.header__investment {
+   
+    
+}
+.box {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 20px;
+    color:#000000;
+    padding: 14px 30px;
+    border-radius: 5px;
+    background-color: #EEEEEE;
+    margin:10px;
+    padding:5px;
+}
+.box:hover {
+    background-color: aquamarine;
+}
+
+

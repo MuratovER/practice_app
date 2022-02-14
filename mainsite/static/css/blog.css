@@ -1,0 +1,25 @@
+.blog-stand {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 18.4%;
+    background-color: #C4C4C4;
+    align-items:center;
+    padding-top: 30px;
+}
+.button {
+    display: grid;
+    justify-content: center;
+}
+.blog-stand-text {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 12px;
+    letter-spacing: 1px;
+    color:#FFF9F9;
+    padding: 14px 30px;
+    border-radius: 30px;
+    background-color: #323232;
+}
