@@ -79,6 +79,11 @@ class Comment(models.Model):
         return self.text
 
 
+class CodeExamples(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField(null=True, blank=True)
+    link = models.CharField(max_length=100)
 
-
+    def __str__(self):
+        return self.title
 

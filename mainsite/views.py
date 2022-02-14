@@ -1,3 +1,7 @@
+import re
+
+import requests
+from bs4 import BeautifulSoup
 from django.contrib.auth.decorators import login_required
 from django.contrib.contenttypes.models import ContentType
 from django.http import HttpResponseRedirect, HttpResponse
@@ -6,7 +10,8 @@ from django.views import View
 from rest_framework.utils import json
 
 from mainsite.forms import PostForm, CommentForm
-from mainsite.models import Post, Comment, LikeDislike
+from mainsite.models import Post, Comment, LikeDislike, CodeExamples
+from mainsite.services.services_code_example import check_for_project_list
 
 
 def apps_list(request):
@@ -21,6 +26,12 @@ def blog_page(request):
     posts = Post.objects.all()
 
     return render(request, 'blog/main_blog.html', {"posts": posts})
+
+
+def code_examples(request):
+    check_for_project_list()
+    projects = CodeExamples.objects.all()
+    return render(request, 'programming/code_examples.html', {'projects':projects})
 
 
 @login_required
