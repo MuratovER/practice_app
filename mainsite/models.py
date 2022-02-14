@@ -87,3 +87,13 @@ class CodeExamples(models.Model):
     def __str__(self):
         return self.title
 
+
+class EulerProblem(models.Model):
+    id = models.IntegerField(primary_key=True)
+    title = models.CharField(max_length=100)
+    code_lines = models.IntegerField()
+    description = models.TextField()
+    solution = models.TextField()
+
+    def __str__(self):
+        return self.title
