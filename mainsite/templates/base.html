@@ -12,10 +12,11 @@
         <script src="{% static 'js/blog.js' %}"></script>
     </head>
         <header>
-        <nav>
-            <button class="header-btn-programming" type="sumbit" onclick="location.href='{% url 'programming' %}'">Programming</button>
-            <button class="header-btn-blog" type="sumbit" onclick="location.href='{% url 'programming' %}'">Blog</button>
-            <button class="header-btn-invesment" type="sumbit" onclick="location.href='{% url 'programming' %}'">Invesments</button>
+            <div class="header-btn-nav">
+            <nav>
+            <button class="header-btn" type="sumbit" onclick="location.href='{% url 'programming' %}'">Programming</button>
+            <button class="header-btn" type="sumbit" onclick="location.href='{% url 'programming' %}'">Blog</button>
+            <button class="header-btn" type="sumbit" onclick="location.href='{% url 'programming' %}'">Invesments</button>
 {#         {% if user.is_authenticated %}#}
 {#              <button type="sumbit" onclick="location.href='{% url 'logout' %}'">Выход</button>#}
 {#              <a href="{% url 'apps_list' %}">Apps</a>#}
@@ -23,7 +24,8 @@
 {#              <button type="sumbit" onclick="location.href='{% url 'login' %}'" >Войти</button>#}
 {#            <button type="sumbit" onclick="location.href='{% url 'signup' %}'">Регистрация</button>#}
 {#         {% endif %}#}
-        </nav>
+            </nav>
+            </div>
         <div class="introduction">
             <div class="introsuction_text">
                 Text
