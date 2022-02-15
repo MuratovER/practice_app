@@ -62,3 +62,7 @@
     line-height: 10px;
     text-align: center;
 }
+
+.box-btn-button {
+    border: none;
+}

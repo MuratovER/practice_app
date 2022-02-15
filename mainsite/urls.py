@@ -21,7 +21,7 @@ urlpatterns = [
     path('apps_list/programming/', views.programming, name='programming'),
     path('apps_list/programming/code_examples/', views.code_examples, name='code_examples'),
     path('apps_list/programming/euler_problems/', views.euler_problems, name='euler_problems'),
-
+    path('apps_list/programming/eulers_problems/', views.eulers_problems, name='eulers_problems'),
     # path('apps_list/blog/post/<int:pk>/like/$',login_required(views.VotesView.as_view(model=Post, vote_type=LikeDislike.LIKE)),
     #     name='post_like'),
     # path('apps_list/blog/post/<int:pk>/dislike/$',login_required(views.VotesView.as_view(model=Post, vote_type=LikeDislike.DISLIKE)),

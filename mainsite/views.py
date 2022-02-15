@@ -31,9 +31,14 @@ def blog_page(request):
 def programming(request):
     return render(request, 'programming/main_code.html')
 
+def eulers_problems(request):
+    return render(request, 'programming/eulers_problems.html')
+
+    
 def euler_problems(request):
     problems = EulerProblem.objects.all()
     return render(request, 'programming/eulerproblems.html', {'problems': problems})
+    
 
 def code_examples(request):
     check_for_project_list()
