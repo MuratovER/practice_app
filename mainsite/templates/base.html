@@ -9,14 +9,16 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
         <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}"/>
-
+        <link rel="stylesheet" type="text/css" href="{% static 'css/programmig.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/eulers_problems.css' %}"/>
         <script src="{% static 'js/blog.js' %}"></script>
     </head>
         <header>
+        <div class="header-btn-nav">    
         <nav>
-            <button class="header-btn-programming" type="sumbit" onclick="location.href='{% url 'programming' %}'">Programming</button>
-            <button class="header-btn-blog" type="sumbit" onclick="location.href='{% url 'programming' %}'">Blog</button>
-            <button class="header-btn-invesment" type="sumbit" onclick="location.href='{% url 'programming' %}'">Invesments</button>
+            <button class="header-btn" type="sumbit" onclick="location.href='{% url 'programming' %}'">Programming</button>
+            <button class="header-btn" type="sumbit" onclick="location.href='{% url 'programming' %}'">Blog</button>
+            <button class="header-btn" type="sumbit" onclick="location.href='{% url 'programming' %}'">Invesments</button>
 {#         {% if user.is_authenticated %}#}
 {#              <button type="sumbit" onclick="location.href='{% url 'logout' %}'">Выход</button>#}
 {#              <a href="{% url 'apps_list' %}">Apps</a>#}
@@ -25,6 +27,7 @@
 {#            <button type="sumbit" onclick="location.href='{% url 'signup' %}'">Регистрация</button>#}
 {#         {% endif %}#}
         </nav>
+        </div>
         <div class="introduction">
             <div class="introsuction_text">
                 Text

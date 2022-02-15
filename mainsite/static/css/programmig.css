@@ -1,0 +1,77 @@
+/**programming*/
+
+.body-btb-programming {
+    min-height: 100%;
+    background: rgb(0, 0, 0);
+    
+}
+.programming-btb-column{
+    max-width: 1808px;
+    display: grid;
+    grid-gap: 2%;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin: 0 50px;
+}
+
+@media (min-width: 992px) {
+    .programming-btb-column
+    { display: grid;
+    grid-area: main;
+    grid-template: 1fr / 1fr minmax(auto, 300) minmax(auto, 1100px) 1fr;
+    }
+    }    
+
+.programming-btn-box {
+    max-width: 500px;
+    max-height: 650px;
+    background-color: #EEE;
+    border: 1px solid #000000;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 50px;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-rows: 2fr 50px 3.5fr;
+
+}
+.column-btn-box{ 
+    /*grid-template-rows: 1fr 1fr 2fr;*/
+}
+
+.first-btn-box{
+    border-radius: 0px 50px 50px 50px;
+}
+
+.second-btn-box{
+    border-radius: 50px;
+}
+
+.third-btn-box{
+    border-radius: 50px 0px 50px 50px;
+}
+
+.box-btn-picture{
+    
+    
+}
+.box-btn-title {
+    
+    font-family: Ruda;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 20px;
+}
+
+.box-btn-text{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 10px;
+    text-align: center;
+}
+
+.box-btn-button {
+    border: none;
+}
