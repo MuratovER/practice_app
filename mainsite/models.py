@@ -65,7 +65,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    author = models.CharField(max_length=50)
     text = models.TextField()
     created_date = models.DateField(default=timezone.now)
     approved_comment = models.BooleanField(default=False)
