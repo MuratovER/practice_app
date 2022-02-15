@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load markdown_extras %}
 {% block content %}
 
     <div class="post">
@@ -8,23 +9,28 @@
             <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
         <h1>{{ post.title }}</h1>
-        <p>{{ post.text|linebreaksbr }}</p>
+        <div>{{ post.text|markdown|safe }}</div>
 
 
 
-        <ul>
-            <li data-id="{{ like_obj.id }}" data-type="post" data-action="like" title="Нравится">
-                <span class="glyphicon glyphicon-thumbs-up"></span>
-                <span data-count="like">{{ like_obj.votes.likes.count }}</span>
-            </li>
-            <li data-id="{{ like_obj.id }}" data-type="post" data-action="dislike" title="Не нравится">
-                <span class="glyphicon glyphicon-thumbs-down"></span>
-                <span data-count="dislike">{{ like_obj.votes.dislikes.count }}</span>
-            </li>
-         </ul>
+{#        <ul>#}
+{#            <li data-id="{{ like_obj.id }}" data-type="post" data-action="like" title="Нравится">#}
+{#                <span class="glyphicon glyphicon-thumbs-up"></span>#}
+{#                <span data-count="like">{{ like_obj.votes.likes.count }}</span>#}
+{#            </li>#}
+{#            <li data-id="{{ like_obj.id }}" data-type="post" data-action="dislike" title="Не нравится">#}
+{#                <span class="glyphicon glyphicon-thumbs-down"></span>#}
+{#                <span data-count="dislike">{{ like_obj.votes.dislikes.count }}</span>#}
+{#            </li>#}
+{#         </ul>#}
 
-
-        <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+        <h1>New comment</h1>
+        <form method="POST" class="post-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Add Comment</button>
+        </form>
+{#        <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>#}
         {% for comment in post.comments.all %}
             {% if user.is_authenticated or comment.approved_comment %}
             <div class="comment">
@@ -33,10 +39,13 @@
                     {% if not comment.approved_comment %}
                         <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
                         <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+
                     {% endif %}
                 </div>
                 <strong>{{ comment.author }}</strong>
                 <p>{{ comment.text|linebreaks }}</p>
+                <a class="btn btn-default" href="{% url 'comment_edit' pk=comment.pk %}"><span class="glyphicon glyphicon-asterisk">Edit</span></a>
+                <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove">Delete</span></a>
             </div>
             {% endif %}
         {% empty %}

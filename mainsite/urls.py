@@ -10,13 +10,15 @@ urlpatterns = [
     path('', views.home_page, name='home_page'),
     path('apps_list', views.apps_list, name='apps_list'),
     path('apps_list/blog', views.blog_page, name='blog_page'),
+
     path('apps_list/blog/post_new', views.post_new, name='post_new'),
     path('apps_list/blog/post/<int:pk>/', views.post_detail, name='post_detail'),
     path('apps_list/blog/post/<int:pk>/edit/', views.post_edit, name='post_edit'),
     path('apps_list/blog/post/<pk>/remove/', views.post_remove, name='post_remove'),
-    path('apps_list/blog/post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
+
     path('apps_list/blog/comment/<int:pk>/approve/', views.comment_approve, name='comment_approve'),
     path('apps_list/blog/comment/<int:pk>/remove/', views.comment_remove, name='comment_remove'),
+    path('apps_list/blog/comment/<int:pk>/edit/', views.comment_edit, name='comment_edit'),
 
     path('apps_list/programming/', views.programming, name='programming'),
     path('apps_list/programming/code_examples/', views.code_examples, name='code_examples'),
