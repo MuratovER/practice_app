@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 {% load markdown_extras %}
 {% block content %}
+{% load static  %}
 
 BLOG
-<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+<div class="blog-content">
+<div class="blog-content-posts">
+    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 {% for post in posts %}
     <div class="post">
         <p>{{ post.publication_date }}</p>
@@ -12,4 +15,43 @@ BLOG
         <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
     </div>
 {% endfor %}
+</div>
+<div class="blog-content-whoami">
+    <div class="blog-content-whoami-card">
+        <div class="blog-content-whoami-card-1">
+            <div class="blog-content-whoami-card-1-text">
+                <h1 class="blog-content-whoami-card-1-h1">Who        da F**k       am i?</h1>
+            </div>
+            <div class="blog-content-whoami-card-1-ico">
+                <img class="blog-content-whoami-card-1-ico-img" src="{% static "img/bfe3f40ffe705e2bac63a18d2dec4068.png" %}" alt="">
+            </div>
+        </div>
+        <hr>
+        <div class="blog-content-whoami-card-2">
+            <p>    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec, nam lectus tincidunt nisl mollis vestibulum, viverra non aenean. Sapien cursus lacinia pharetra aenean enim, pellentesque pulvinar dignissim etiam. Scelerisque lacus, facilisis nibh praesent vitae sed lorem elementum faucibus. Eu, est facilisis sem rutrum curabitur id aliquam cursus. Ultrices sit laoreet venenatis congue. Consequat amet ornare tristique aliquam. Elementum venenatis sit aliquam auctor fames. </p>
+        </div>
+        <hr>
+        <div class="blog-content-whoami-card-3">
+            <a href="https://github.com/MuratovER">
+                <div class="blog-content-whoami-card-3-git">
+                    <img class="blog-content-whoami-card-3-git-img" src="{% static "img/git_blog_ico.png" %}" alt="">
+                </div>
+            </a>
+            <a href="https://www.instagram.com/_sigma_elka_/">
+                <div class="blog-content-whoami-card-3-inst">
+                   <img class="blog-content-whoami-card-3-inst-img" src="{% static "img/inst_blog_ico.png" %}" alt="">
+                </div>
+            </a>
+            <a href="https://t.me/MuratovER">
+                <div class="blog-content-whoami-card-3-tg">
+                    <img class="blog-content-whoami-card-3-tg-img" src="{% static "img/tg_blog_ico.png" %}" alt="">
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+</div>
+
 {% endblock %}
