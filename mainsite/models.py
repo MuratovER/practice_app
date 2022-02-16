@@ -97,3 +97,13 @@ class EulerProblem(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Stock(models.Model):
+    id = models.IntegerField(primary_key=True)
+    symbol = models.CharField(max_length=100)
+    exchange = models.CharField(max_length=100)
+    country = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.symbol

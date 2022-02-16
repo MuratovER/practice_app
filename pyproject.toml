@@ -17,6 +17,7 @@ django-filter = "^21.1"
 loguru = "^0.6.0"
 requests = "^2.27.1"
 beautifulsoup4 = "^4.10.0"
+twelvedata = {extras = ["pandas", "matplotlib", "plotly", "websocket-client"], version = "^1.2.4"}
 
 [tool.poetry.dev-dependencies]
 
