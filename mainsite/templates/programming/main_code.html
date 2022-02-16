@@ -4,39 +4,48 @@
 
     <div class="body-btb-programming">
         <div class="programming-btb-column column-btn-box">
-            <div class="programming-btn-box first-btn-box">
-                <div class="box-btn-picture">
-                    <img src="\..\..\static\svg\tsks-euler.svg" />
+            <a href="{% url 'euler_problems' %}">
+                <div class="programming-btn-box first-btn-box">
+                    <div class="box-btn-picture">
+                        <img src="\..\..\static\svg\tsks-euler.svg" />
+                    </div>
+                    <div class="box-btn-title">
+                        <button  class="box-btn-button"> Задачи Эйлера </button>
+                    </div>
+                    <div class="box-btn-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sociis aenean tristique nulla lorem vel. Pellentesque at est quis metus libero gravida. Aliquam nulla interdum praesent fringilla ut tempus, sagittis. Integer viverra sit volutpat, lacus eget nec turpis nibh sed. Ut faucibus vitae posuere sagittis donec senectus faucibus. Viverra vestibulum ligula viverra netus bibendum eget aliquet. Ac, nibh praesent aliquet semper elit imperdiet blandit et. Orci pellentesque consequat rhoncus cras neque dignissim feugiat aliquet. Accumsan tellus pellentesque mauris aenean. Massa diam egestas orci pulvinar egestas felis accumsan, ornare. Ante pellentesque at tellus tristique nunc, fermentum ullamcorper arcu. Fringilla aliquet vestibulum a at eget vel. In nisi, sit velit odio velit sed dignissim odio donec. Tellus tristique augue quam nibh libero laoreet amet, augue.
+                    </div>
                 </div>
-                <div class="box-btn-title">
-                    <button onclick="location.href='{% url 'eulers_problems' %}'" class="box-btn-button"> Задачи Эйлера </button>
+            </a>
+            <a href="">
+                <div class="programming-btn-box second-btn-box">
+                    <div class="box-btn-picture">
+                        <img src="\..\..\static\svg\portfolio.svg" />
+                    </div>
+                    <div class="box-btn-title">
+                        <button class="box-btn-button"> Портфолио </button>
+                    </div>
+                    <div class="box-btn-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sociis aenean tristique nulla lorem vel. Pellentesque at est quis metus libero gravida. Aliquam nulla interdum praesent fringilla ut tempus, sagittis. Integer viverra sit volutpat, lacus eget nec turpis nibh sed. Ut faucibus vitae posuere sagittis donec senectus faucibus. Viverra vestibulum ligula viverra netus bibendum eget aliquet. Ac, nibh praesent aliquet semper elit imperdiet blandit et. Orci pellentesque consequat rhoncus cras neque dignissim feugiat aliquet. Accumsan tellus pellentesque mauris aenean. Massa diam egestas orci pulvinar egestas felis accumsan, ornare. Ante pellentesque at tellus tristique nunc, fermentum ullamcorper arcu. Fringilla aliquet vestibulum a at eget vel. In nisi, sit velit odio velit sed dignissim odio donec. Tellus tristique augue quam nibh libero laoreet amet, augue.
+                    </div>
                 </div>
-                <div class="box-btn-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sociis aenean tristique nulla lorem vel. Pellentesque at est quis metus libero gravida. Aliquam nulla interdum praesent fringilla ut tempus, sagittis. Integer viverra sit volutpat, lacus eget nec turpis nibh sed. Ut faucibus vitae posuere sagittis donec senectus faucibus. Viverra vestibulum ligula viverra netus bibendum eget aliquet. Ac, nibh praesent aliquet semper elit imperdiet blandit et. Orci pellentesque consequat rhoncus cras neque dignissim feugiat aliquet. Accumsan tellus pellentesque mauris aenean. Massa diam egestas orci pulvinar egestas felis accumsan, ornare. Ante pellentesque at tellus tristique nunc, fermentum ullamcorper arcu. Fringilla aliquet vestibulum a at eget vel. In nisi, sit velit odio velit sed dignissim odio donec. Tellus tristique augue quam nibh libero laoreet amet, augue.
+            </a>
+            <a href="{% url 'code_examples' %}">
+                <div class="programming-btn-box third-btn-box">
+                    <div class="box-btn-picture">
+                        <img src="\..\..\static\svg\code.svg" />
+                    </div>
+                    <div class="box-btn-title">
+                       <button class="box-btn-button"> Примеры кода </button>
+                    </div>
+                    <div class="box-btn-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sociis aenean tristique nulla lorem vel. Pellentesque at est quis metus libero gravida. Aliquam nulla interdum praesent fringilla ut tempus, sagittis. Integer viverra sit volutpat, lacus eget nec turpis nibh sed. Ut faucibus vitae posuere sagittis donec senectus faucibus. Viverra vestibulum ligula viverra netus bibendum eget aliquet. Ac, nibh praesent aliquet semper elit imperdiet blandit et. Orci pellentesque consequat rhoncus cras neque dignissim feugiat aliquet. Accumsan tellus pellentesque mauris aenean. Massa diam egestas orci pulvinar egestas felis accumsan, ornare. Ante pellentesque at tellus tristique nunc, fermentum ullamcorper arcu. Fringilla aliquet vestibulum a at eget vel. In nisi, sit velit odio velit sed dignissim odio donec. Tellus tristique augue quam nibh libero laoreet amet, augue.
+                    </div>
                 </div>
-            </div>
-            <div class="programming-btn-box second-btn-box">
-                <div class="box-btn-picture">
-                    <img src="\..\..\static\svg\portfolio.svg" />
-                </div>
-                <div class="box-btn-title">
-                    <button class="box-btn-button"> Портфолио </button>    
-                </div>
-                <div class="box-btn-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sociis aenean tristique nulla lorem vel. Pellentesque at est quis metus libero gravida. Aliquam nulla interdum praesent fringilla ut tempus, sagittis. Integer viverra sit volutpat, lacus eget nec turpis nibh sed. Ut faucibus vitae posuere sagittis donec senectus faucibus. Viverra vestibulum ligula viverra netus bibendum eget aliquet. Ac, nibh praesent aliquet semper elit imperdiet blandit et. Orci pellentesque consequat rhoncus cras neque dignissim feugiat aliquet. Accumsan tellus pellentesque mauris aenean. Massa diam egestas orci pulvinar egestas felis accumsan, ornare. Ante pellentesque at tellus tristique nunc, fermentum ullamcorper arcu. Fringilla aliquet vestibulum a at eget vel. In nisi, sit velit odio velit sed dignissim odio donec. Tellus tristique augue quam nibh libero laoreet amet, augue.
-                </div>
-            </div>
-            <div class="programming-btn-box third-btn-box">
-                <div class="box-btn-picture">
-                    <img src="\..\..\static\svg\code.svg" />
-                </div>
-                <div class="box-btn-title">
-                   <button class="box-btn-button"> Примеры кода </button>
-                </div>
-                <div class="box-btn-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sociis aenean tristique nulla lorem vel. Pellentesque at est quis metus libero gravida. Aliquam nulla interdum praesent fringilla ut tempus, sagittis. Integer viverra sit volutpat, lacus eget nec turpis nibh sed. Ut faucibus vitae posuere sagittis donec senectus faucibus. Viverra vestibulum ligula viverra netus bibendum eget aliquet. Ac, nibh praesent aliquet semper elit imperdiet blandit et. Orci pellentesque consequat rhoncus cras neque dignissim feugiat aliquet. Accumsan tellus pellentesque mauris aenean. Massa diam egestas orci pulvinar egestas felis accumsan, ornare. Ante pellentesque at tellus tristique nunc, fermentum ullamcorper arcu. Fringilla aliquet vestibulum a at eget vel. In nisi, sit velit odio velit sed dignissim odio donec. Tellus tristique augue quam nibh libero laoreet amet, augue.
-                </div>
-            </div>
+            </a>
+
+
+
         </div>
     </div>
 

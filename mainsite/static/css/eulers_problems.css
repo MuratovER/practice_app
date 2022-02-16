@@ -1,7 +1,7 @@
 
 .body-btn-problem{
     height: 100%;
-    background-color:#000000;
+    background: #1F1F1F;
 }
 
 .conteiner-btn-call{
@@ -19,7 +19,7 @@
 }
 
 .container-btn-tasks-box{
-    background-color: #eee4e4;
+    background-color: #c4c4c4;
     border: 3px solid #0f0f0f;
     color: #000000;
     padding: 5px;

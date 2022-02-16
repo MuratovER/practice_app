@@ -8,7 +8,6 @@ from mainsite.models import Comment, Post, LikeDislike
 
 urlpatterns = [
     path('', views.home_page, name='home_page'),
-    path('apps_list', views.apps_list, name='apps_list'),
     path('apps_list/blog', views.blog_page, name='blog_page'),
 
     path('apps_list/blog/post_new', views.post_new, name='post_new'),
@@ -23,8 +22,9 @@ urlpatterns = [
     path('apps_list/programming/', views.programming, name='programming'),
     path('apps_list/programming/code_examples/', views.code_examples, name='code_examples'),
     path('apps_list/programming/euler_problems/', views.euler_problems, name='euler_problems'),
-    path('apps_list/programming/eulers_problems/', views.eulers_problems, name='eulers_problems'),
-    
+
+    path('apps_list/investment', views.main_invest, name='investment'),
+
     # path('apps_list/blog/post/<int:pk>/like/$',login_required(views.VotesView.as_view(model=Post, vote_type=LikeDislike.LIKE)),
     #     name='post_like'),
     # path('apps_list/blog/post/<int:pk>/dislike/$',login_required(views.VotesView.as_view(model=Post, vote_type=LikeDislike.DISLIKE)),

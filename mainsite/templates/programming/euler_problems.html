@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load markdown_extras %}
+
+{% block content %}
+
+<div class="body-btn-problem">
+    <div class="conteiner-btn-call">
+        <a>ID</a>
+        <a>Desciption/Title</a>
+        <a>Code lines</a>
+    </div>
+    <div class="container-btn-tasks">
+        <div class="container-btn-tasks-box box-btn-container">
+            <button type="submit" class="visible-euler-problems-btn">
+                <div class="visible-euler-problems">
+                    {% for problem in problems %}
+                        <div class="euler-problem-id">{{ problem.id }}</div>
+                        <div class="euler-problem-title">{{ problem.title }}</div>
+                        <div class="euler-problem-code-lines">{{ problem.code_lines }}</div>
+                    {% endfor %}
+                </div>
+            </button>
+            <div class="hidden-euler-problems">
+                {% for problem in problems %}
+                    <div class="euler-problem-solution">{{ problem.solution|markdown|safe}}</div>
+                    <div class="euler-problem-description">{{ problem.description }}</div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

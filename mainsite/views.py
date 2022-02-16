@@ -19,10 +19,6 @@ def apps_list(request):
     return render(request, 'app_list.html')
 
 
-def home_page(request):
-    return render(request, 'home_page.html')
-
-
 def blog_page(request):
     posts = Post.objects.all()
 
@@ -33,19 +29,23 @@ def programming(request):
     return render(request, 'programming/main_code.html')
 
 
-def eulers_problems(request):
-    return render(request, 'programming/eulers_problems.html')
-
-    
 def euler_problems(request):
     problems = EulerProblem.objects.all()
-    return render(request, 'programming/eulerproblems.html', {'problems': problems})
+    return render(request, 'programming/euler_problems.html', {'problems': problems})
 
 
 def code_examples(request):
     check_for_project_list()
     projects = CodeExamples.objects.all()
     return render(request, 'programming/code_examples.html', {'projects': projects})
+
+
+def main_invest(request):
+    return render(request, 'investment/main_invest.html')
+
+
+def home_page(request):
+    return redirect('blog_page')
 
 
 @login_required
