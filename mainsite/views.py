@@ -41,14 +41,14 @@ def code_examples(request):
 
 
 def main_invest(request):
-    td = TDClient(apikey="c7d2d67226394eafb42704f30600f740")
+    # td = TDClient(apikey="c7d2d67226394eafb42704f30600f740")
+    #
+    #
+    #
+    # ts = td.time_series(symbol='AAPL,MSFT', interval="1min", outputsize=3)
+    # df = ts.with_macd().with_macd(fast_period=10).with_stoch().as_pandas()
 
-
-
-    ts = td.time_series(symbol='AAPL,MSFT', interval="1min", outputsize=3)
-    df = ts.with_macd().with_macd(fast_period=10).with_stoch().as_pandas()
-
-    print(df)
+    # print(df)
 
     return render(request, 'investment/main_invest.html')
 
