@@ -102,8 +102,18 @@ class EulerProblem(models.Model):
 class Stock(models.Model):
     id = models.IntegerField(primary_key=True)
     symbol = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, null=True, blank=True)
     exchange = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
+    buy_price = models.FloatField(default=0)
+    curent_price = models.FloatField(null=True, blank=True)
+    dividend = models.FloatField(null=True, blank=True )
+    poe = models.FloatField(default=1)
+    amount = models.IntegerField(default=1)
+    share = models.FloatField(null=True, blank=True)
+    invested = models.FloatField(null=True, blank=True)
+    end_value = models.FloatField(null=True, blank=True)
+    profit = models.FloatField(default=0)
 
     def __str__(self):
         return self.symbol
