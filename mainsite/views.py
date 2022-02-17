@@ -59,6 +59,9 @@ def main_invest(request):
 
 
     portfolio.capital = "%.2f" % full_capital
+    print(full_capital)
+    print(first_capital)
+
     portfolio_calc = full_capital - first_capital
     portfolio.profit = "%.2f" % portfolio_calc
     portfolio.assets = stocks.count()
