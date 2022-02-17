@@ -46,27 +46,6 @@ def main_invest(request):
     portfolio = Portfolio.objects.get()
     investment_calculation(stocks, portfolio)
 
-
-
-    profit = 0
-    first_capital = 0
-    full_capital = 0
-
-    for stock in stocks:
-        full_capital += stock.end_value
-        profit += float(stock.profit)
-        first_capital += stock.invested
-
-
-    portfolio.capital = "%.2f" % full_capital
-    print(full_capital)
-    print(first_capital)
-
-    portfolio_calc = full_capital - first_capital
-    portfolio.profit = "%.2f" % portfolio_calc
-    portfolio.assets = stocks.count()
-    profitability_calc = ( full_capital - first_capital ) / first_capital * 100
-    portfolio.profitability = "%.2f" % profitability_calc
     ctx = {
         'stocks': stocks,
         'portfolio': portfolio

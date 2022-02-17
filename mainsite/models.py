@@ -100,11 +100,11 @@ class EulerProblem(models.Model):
 
 
 class Portfolio(models.Model):
-    capital = models.FloatField()
-    assets = models.IntegerField()
+    capital = models.FloatField(default=0)
+    assets = models.IntegerField(default=0)
     chart = models.ImageField(blank=True, null=True)
-    profitability = models.FloatField()
-    profit = models.FloatField()
+    profitability = models.FloatField(default=0)
+    profit = models.FloatField(default=0)
     standartandpoor = models.ImageField(blank=True, null=True)
     revenue_image = models.ImageField(blank=True, null=True)
 
