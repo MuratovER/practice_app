@@ -11,9 +11,9 @@ from django.views import View
 from rest_framework.utils import json
 
 from mainsite.forms import PostForm, CommentForm
-from mainsite.models import Post, Comment, LikeDislike, CodeExamples, EulerProblem, Stock
+from mainsite.models import Post, Comment, LikeDislike, CodeExamples, EulerProblem, Stock, Portfolio
 from mainsite.services.services_code_example import check_for_project_list
-from mainsite.services.services_investment import stock_calculation
+from mainsite.services.services_investment import stock_calculation, investment_calculation
 
 
 def apps_list(request):
@@ -43,9 +43,30 @@ def code_examples(request):
 
 def main_invest(request):
     stocks = Stock.objects.all()
-    stock_calculation(stocks)
+    portfolio = Portfolio.objects.get()
+    investment_calculation(stocks, portfolio)
+
+
+
+    profit = 0
+    first_capital = 0
+    full_capital = 0
+
+    for stock in stocks:
+        full_capital += stock.end_value
+        profit += float(stock.profit)
+        first_capital += stock.invested
+
+
+    portfolio.capital = "%.2f" % full_capital
+    portfolio_calc = full_capital - first_capital
+    portfolio.profit = "%.2f" % portfolio_calc
+    portfolio.assets = stocks.count()
+    profitability_calc = full_capital * 100 / first_capital
+    portfolio.profitability = "%.2f" % profitability_calc
     ctx = {
-        'stocks': stocks
+        'stocks': stocks,
+        'portfolio': portfolio
     }
     return render(request, 'investment/main_invest.html', ctx)
 

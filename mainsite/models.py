@@ -99,6 +99,16 @@ class EulerProblem(models.Model):
         return self.title
 
 
+class Portfolio(models.Model):
+    capital = models.FloatField()
+    assets = models.IntegerField()
+    chart = models.ImageField(blank=True, null=True)
+    profitability = models.FloatField()
+    profit = models.FloatField()
+    standartandpoor = models.ImageField(blank=True, null=True)
+    revenue_image = models.ImageField(blank=True, null=True)
+
+
 class Stock(models.Model):
     id = models.IntegerField(primary_key=True)
     symbol = models.CharField(max_length=100)

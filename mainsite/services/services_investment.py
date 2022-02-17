@@ -1,3 +1,12 @@
+def investment_calculation(stocks, portfolio):
+    stock_calculation(stocks)
+
+
+# def portfolio_calculation(stock_obj, portfolio):
+#     portfolio.assets = stock_obj.count()
+#
+
+
 def stock_calculation(stocks):
     allshare = 0
     for sharestock in stocks:

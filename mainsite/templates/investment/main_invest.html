@@ -3,7 +3,12 @@
 {% block content %}
 <div class="content-investment">
 <div class="content-investment-statistic">
-
+        <div class="content-investment-statistic-card">
+            <div class="content-investment-statistic-capital">Capital: {{ portfolio.capital }}</div>
+            <div class="content-investment-statistic-profitability">Profitability: {{ portfolio.profitability}}</div>
+            <div class="content-investment-statistic-profit">Profit: {{ portfolio.profit}}</div>
+            <div class="content-investment-statistic-assets">Assets: {{ portfolio.assets }}</div>
+        </div>
 </div>
 <div class="content-investment-chart">
 
