@@ -11,8 +11,9 @@ from django.views import View
 from rest_framework.utils import json
 
 from mainsite.forms import PostForm, CommentForm
-from mainsite.models import Post, Comment, LikeDislike, CodeExamples, EulerProblem, Stock
+from mainsite.models import Post, Comment, LikeDislike, CodeExamples, EulerProblem, Stock, Portfolio
 from mainsite.services.services_code_example import check_for_project_list
+from mainsite.services.services_investment import stock_calculation, investment_calculation
 
 
 def apps_list(request):
@@ -41,16 +42,15 @@ def code_examples(request):
 
 
 def main_invest(request):
-    # td = TDClient(apikey="c7d2d67226394eafb42704f30600f740")
-    #
-    #
-    #
-    # ts = td.time_series(symbol='AAPL,MSFT', interval="1min", outputsize=3)
-    # df = ts.with_macd().with_macd(fast_period=10).with_stoch().as_pandas()
+    stocks = Stock.objects.all()
+    portfolio = Portfolio.objects.get()
+    investment_calculation(stocks, portfolio)
 
-    # print(df)
-
-    return render(request, 'investment/main_invest.html')
+    ctx = {
+        'stocks': stocks,
+        'portfolio': portfolio
+    }
+    return render(request, 'investment/main_invest.html', ctx)
 
 
 def home_page(request):

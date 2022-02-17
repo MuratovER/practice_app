@@ -1,5 +1,48 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="content-investment">
+<div class="content-investment-statistic">
+        <div class="content-investment-statistic-card">
+            <div class="content-investment-statistic-capital">Capital: {{ portfolio.capital }}</div>
+            <div class="content-investment-statistic-profitability">Profitability: {{ portfolio.profitability}}</div>
+            <div class="content-investment-statistic-profit">Profit: {{ portfolio.profit}} %</div>
+            <div class="content-investment-statistic-assets">Assets: {{ portfolio.assets }}</div>
+        </div>
+</div>
+<div class="content-investment-chart">
 
+</div>
+<div class="content-investement-assettab">
+    {% for stock in stocks %}
+        <div class="content-investement-assettab-symbol">
+            Symbol: {{ stock.symbol }}
+        </div>
+        <div class="content-investement-assettab-amount">
+            Amount: {{ stock.amount }}
+        </div>
+        <div class="content-investement-assettab-invested">
+            Invested: {{ stock.invested }}
+        </div>
+        <div class="content-investement-assettab-invested">
+            End Value: {{ stock.end_value }}
+        </div>
+        <div class="content-investement-assettab-curent-price">
+            Current_price: {{ stock.curent_price }}
+        </div>
+        <div class="content-investement-assettab-profit">
+            Profit: {{ stock.profit }}%
+        </div>
+        <div class="content-investement-assettab-share">
+            Share: {{ stock.share }}%
+        </div>
+    {% endfor %}
+</div>
+<div class="content-investment-sandp">
+
+</div>
+<div class="content-investment-profit">
+
+</div>
+</div>
 {% endblock %}
