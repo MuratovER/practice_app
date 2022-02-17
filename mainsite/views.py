@@ -65,7 +65,7 @@ def main_invest(request):
     portfolio_calc = full_capital - first_capital
     portfolio.profit = "%.2f" % portfolio_calc
     portfolio.assets = stocks.count()
-    profitability_calc = full_capital * 100 / first_capital
+    profitability_calc = ( full_capital - first_capital ) / first_capital * 100
     portfolio.profitability = "%.2f" % profitability_calc
     ctx = {
         'stocks': stocks,
