@@ -1,6 +1,5 @@
 import re
 from loguru import logger
-from twelvedata import TDClient
 import requests
 from bs4 import BeautifulSoup
 from django.contrib.auth.decorators import login_required
