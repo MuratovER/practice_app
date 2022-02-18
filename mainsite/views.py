@@ -9,11 +9,11 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from rest_framework.utils import json
-
+from matplotlib import pyplot as plt
 from mainsite.forms import PostForm, CommentForm
-from mainsite.models import Post, Comment, LikeDislike, CodeExamples, EulerProblem, Stock, Portfolio
+from mainsite.models import Post, Comment, LikeDislike, CodeExamples, EulerProblem, Stock, Portfolio, Deposit
 from mainsite.services.services_code_example import check_for_project_list
-from mainsite.services.services_investment import stock_calculation, investment_calculation
+from mainsite.services.services_investment import stock_calculation, investment_calculation, chart_drawing
 
 
 def apps_list(request):
@@ -44,7 +44,9 @@ def code_examples(request):
 def main_invest(request):
     stocks = Stock.objects.all()
     portfolio = Portfolio.objects.get()
-    investment_calculation(stocks, portfolio)
+    deposits = Deposit.objects.all()
+    investment_calculation(stocks, deposits, portfolio)
+    chart_drawing(stocks, deposits, portfolio)
 
     ctx = {
         'stocks': stocks,
