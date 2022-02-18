@@ -81,7 +81,8 @@ def chart_drawing(stocks, deposits, portfolio):
             stock_full_share = 100 - deposit_full_share
         else:
             summ_assets = 0
-
+    deposit_full_share = 0
+    stock_full_share = 0
     plt.style.use("fivethirtyeight")
 
     slices = []
