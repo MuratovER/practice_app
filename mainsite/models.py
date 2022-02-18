@@ -99,16 +99,6 @@ class EulerProblem(models.Model):
         return self.title
 
 
-class Portfolio(models.Model):
-    capital = models.FloatField(default=0)
-    assets = models.IntegerField(default=0)
-    chart = models.ImageField(blank=True, null=True)
-    profitability = models.FloatField(default=0)
-    profit = models.FloatField(default=0)
-    standartandpoor = models.ImageField(blank=True, null=True)
-    revenue_image = models.ImageField(blank=True, null=True)
-
-
 class Stock(models.Model):
     id = models.IntegerField(primary_key=True)
     symbol = models.CharField(max_length=100)
@@ -127,3 +117,19 @@ class Stock(models.Model):
 
     def __str__(self):
         return self.symbol
+
+
+class Deposit(models.Model):
+    deposit = models.FloatField(default=0)
+    percantage = models.FloatField(default=0)
+
+
+class Portfolio(models.Model):
+
+    capital = models.FloatField(default=0)
+    assets = models.IntegerField(default=0)
+    chart = models.ImageField(upload_to='static/img', blank=True, null=True)
+    profitability = models.FloatField(default=0)
+    profit = models.FloatField(default=0)
+    standartandpoor = models.ImageField(blank=True, null=True)
+    revenue_image = models.ImageField(blank=True, null=True)
