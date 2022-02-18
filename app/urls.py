@@ -1,4 +1,3 @@
-from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth import logout
 from django.contrib.auth.views import LogoutView, LoginView
