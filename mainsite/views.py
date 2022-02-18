@@ -42,8 +42,9 @@ def code_examples(request):
 
 def main_invest(request):
     stocks = Stock.objects.all()
-    portfolio = Portfolio.objects.get()
     deposits = Deposit.objects.all()
+    portfolio = Portfolio.objects.get()
+
     investment_calculation(stocks, deposits, portfolio)
     chart_drawing(stocks, deposits, portfolio)
 

@@ -20,7 +20,11 @@ def portfolio_calculation(stocks, deposits, portfolio):
         first_capital += stock.invested
 
     portfolio.capital = "%.2f" % full_capital
-    portfolio_calc =( full_capital - first_capital ) / first_capital * 100
+    if first_capital == 0:
+        portfolio_calc = 0
+    else:
+        portfolio_calc =( full_capital - first_capital ) / first_capital * 100
+
     portfolio.profit = "%.2f" % portfolio_calc
     portfolio.assets = stocks.count()+ deposits.count()
     try:
@@ -59,16 +63,24 @@ def chart_drawing(stocks, deposits, portfolio):
 
 
     deposit_end_value = 0
+
     for deposit in deposits:
         deposit_end_value += float(deposit.deposit)
 
     summ_assets = deposit_end_value + stock_end_value
+
     if stock_end_value >= deposit_end_value:
-        stock_full_share = (stock_end_value * 100) / summ_assets
-        deposit_full_share = 100 - stock_full_share
+        if summ_assets != 0:
+            stock_full_share = (stock_end_value * 100) / summ_assets
+            deposit_full_share = 100 - stock_full_share
+        else:
+            stock_full_share = 0
     else:
-        deposit_full_share = (deposit_end_value* 100) / summ_assets
-        stock_full_share = 100 - deposit_full_share
+        if summ_assets != 0:
+            deposit_full_share = (deposit_end_value* 100) / summ_assets
+            stock_full_share = 100 - deposit_full_share
+        else:
+            summ_assets = 0
 
     plt.style.use("fivethirtyeight")
 
@@ -76,18 +88,20 @@ def chart_drawing(stocks, deposits, portfolio):
     labels = []
     colors = ['#FE5454', '#525AA5', '#C8CB27', '#54FEE9']
     #'#FE5454'=red, '#525AA5'=purple, '#C8CB27'=yellow, '#54FEE9'=blue
+    try:
+        full_stock_share_float = float("%.1f" % stock_full_share)
+        full_deposit_share_float = float("%.1f" % deposit_full_share)
 
-    full_stock_share_float = float("%.1f" % stock_full_share)
-    full_deposit_share_float = float("%.1f" % deposit_full_share)
+        slices.append(full_stock_share_float)
+        slices.append(full_deposit_share_float)
 
-    slices.append(full_stock_share_float)
-    slices.append(full_deposit_share_float)
+        labels.append('Stocks')
+        labels.append('Deposit')
 
-    labels.append('Stocks')
-    labels.append('Deposit')
-
-    plt.pie(slices, labels=labels, colors=colors,wedgeprops={'edgecolor': 'black'})
-    plt.tight_layout()
-    plt.savefig("mainsite\static\img\chart.png")
+        plt.pie(slices, labels=labels, colors=colors,wedgeprops={'edgecolor': 'black'})
+        plt.tight_layout()
+        plt.savefig("mainsite\static\img\chart.png")
+    except:
+        plt.savefig("mainsite\static\img\chart.png")
 
 
