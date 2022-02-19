@@ -126,9 +126,9 @@ psql
 ```
 CREATE USER root;
 
-ALTER USER eldar WITH PASSWORD 'sbHQHFPX';
+ALTER USER root WITH PASSWORD 'sbHQHFPX';
 
-CREATE DATABASE ts OWNER eldar;
+CREATE DATABASE practice_app OWNER root;
 ```
 
 
