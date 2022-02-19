@@ -1,13 +1,11 @@
-// var a;
-// function show_hide()
-// {
-//     if(a==1)
-//     {
-//         document.getElementsByClassName("ler-problems").style.display="inline";
-//         return a=0;
-//     }
-//     else {
-//         document.getElementsByClassName("hidden-euler-problems").style.display="none";
-//         return a=1;
-//     }
-// }
+function show_hide(id_1)
+{
+    if(document.getElementById(id_1).style.display=="none")
+    {
+        document.getElementById(id_1).style.display="flex";
+    }
+    else
+    {
+        document.getElementById(id_1).style.display="none";
+    }
+}

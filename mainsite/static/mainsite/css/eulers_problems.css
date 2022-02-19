@@ -35,7 +35,7 @@
 
 .hidden-euler-problems {
     background-color: white;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: space-evenly;
     border-radius: 30px;
