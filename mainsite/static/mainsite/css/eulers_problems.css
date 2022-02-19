@@ -32,3 +32,57 @@
     grid-template-columns:1fr 1fr 0.5fr;
     padding: 0 30px;
 }
+
+.hidden-euler-problems {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border-radius: 30px;
+    margin: 15px;
+
+}
+
+.visible-euler-problems {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.visible-euler-problems-btn {
+    background-color: #C4C4C4;
+}
+
+.euler-problem-description {
+    background-color: #C4C4C4;
+    margin: 20px;
+    border-radius: 15px;
+    width: 20%;
+    padding: 20px;
+    text-align: left;
+}
+
+.euler-problem-solution {
+    color: blue;
+    text-align: left;
+    width: 60%;
+}
+
+
+.container-btn-tasks-box-box-btn-container {
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+
+.visible-euler-problems-btn {
+    width: calc(100% - 50px);
+    border-radius: 30px;
+    margin: 5px;
+}
+
+.conteiner-btn-call {
+    display: flex;
+    justify-content: space-evenly;
+    color: wheat;
+}

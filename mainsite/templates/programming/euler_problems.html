@@ -10,25 +10,42 @@
         <a>Code lines</a>
     </div>
     <div class="container-btn-tasks">
-        <div class="container-btn-tasks-box box-btn-container">
-            <button type="submit" class="visible-euler-problems-btn">
+        <div class="container-btn-tasks-box-box-btn-container">
+        {% for problem in problems %}
+            <button  class="visible-euler-problems-btn" onclick="show_hide(id_1='{{ problem.id }}')">
                 <div class="visible-euler-problems">
-                    {% for problem in problems %}
                         <div class="euler-problem-id">{{ problem.id }}</div>
                         <div class="euler-problem-title">{{ problem.title }}</div>
                         <div class="euler-problem-code-lines">{{ problem.code_lines }}</div>
-                    {% endfor %}
+                </div>
+                <div class="hidden-euler-problems" id="{{ problem.id }}">
+{#                    <div class="euler-problem-solution">{{ problem.solution|markdown|safe}}</div>#}
+                    <span class="euler-problem-solution">{{ problem.solution|markdown|safe}}</span>
+                    <div class="euler-problem-description">
+                        <h1>Problem</h1>
+                        <hr>
+                        {{ problem.description }}
+                    </div>
                 </div>
             </button>
-            <div class="hidden-euler-problems">
-                {% for problem in problems %}
-                    <div class="euler-problem-solution">{{ problem.solution|markdown|safe}}</div>
-                    <div class="euler-problem-description">{{ problem.description }}</div>
-                {% endfor %}
-            </div>
 
+                <script>
+                    function show_hide(id_1)
+                        {
+                            if(document.getElementById(id_1).style.display=="none")
+                            {
+                                document.getElementById(id_1).style.display="flex";
+                            }
+                            else
+                            {
+                                document.getElementById(id_1).style.display="none";
+                            }
+                        }
+                </script>
+        {% endfor %}
         </div>
     </div>
 </div>
+
 
 {% endblock %}
