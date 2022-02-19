@@ -81,22 +81,7 @@ nav{
     padding-top: 10px;
 }
 
-.project-link a {
-    text-decoration: none;
-}
 
-.project {
-    margin-top: 5px;
-    padding-bottom: 5px;
-    margin-left: 10px;
-    padding-left: 10px;
-    margin-bottom: 5px;
-    background-color: rgba(95, 95, 95, 0.09);
-    width: 500px;
-    border-radius: 15px;
-
-
-}
 
 hr {
     display: block;
