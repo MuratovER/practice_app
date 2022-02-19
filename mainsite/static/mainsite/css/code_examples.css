@@ -1,0 +1,24 @@
+a:active, /* активная/посещенная ссылка */
+a:hover,  /* при наведении */
+a {
+  text-decoration: none;
+  color: #FFF9F9;
+}
+
+.project_container {
+    background-color: #323232;
+    border-radius: 10px;
+    width: calc(50% - 100px);
+    padding: 10px;
+    margin:  10px 50px 10px 50px;
+    text-align: center;
+}
+
+.all_projects {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    justify-content: space-evenly;
+    background-color: #FFF9F9;
+
+}

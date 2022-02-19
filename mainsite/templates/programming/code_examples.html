@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% for project in projects %}
-        <a class="project-link" href="{{ project.link }}">
-            <div class="project">
-                <h1>{{ project.title }}</h1>
-                <hr color="grey">
-                <p>{{ project.description }}</p>
-            </div>
-        </a>
+    <div class="all_projects">
+        {% for project in projects %}
+        <div class="project_container">
+            <a class="project-link" href="{{ project.link }}">
+                <div class="project">
+                    <h1>{{ project.title }}</h1>
+                    <hr color="grey">
+                    <p>{{ project.description }}</p>
+                </div>
+            </a>
+        </div>
     {% endfor %}
+    </div>
 {% endblock %}
