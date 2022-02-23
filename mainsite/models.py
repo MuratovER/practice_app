@@ -51,7 +51,7 @@ class LikeDislike(models.Model):
 
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=70)
     text = models.TextField()
     publication_date = models.DateField(default=timezone.now)
     votes = GenericRelation(LikeDislike, related_query_name='posts')
