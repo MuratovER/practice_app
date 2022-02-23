@@ -1,4 +1,50 @@
+.post {
+    margin: 75px;
+}
 
+.post_title {
+    color: #EEE;
+    margin: 50px;
+    text-align: center;
+}
+
+.post_publication_date {
+    color: #EEE;
+    margin: 50px;
+}
+
+.post_text {
+    color: #EEE;
+    margin: 50px;
+    font-size: 28px;
+    text-align: justify;
+}
+
+.post_comment{
+    margin: 100px 50px 100px 50px;
+
+}
+
+.comment_title {
+    color: #EEEEEE;
+    justify-content: space-between;
+    display: flex;
+}
+
+.comment {
+    background-color: #C4C4C4;
+    margin-top: 40px;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.date {
+    display: flex;
+}
+
+.post-form {
+    display: none;
+}
 
 .blog-content-whoami-card-1-text {
 

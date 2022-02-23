@@ -8,24 +8,26 @@
             <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
             <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
-        <h1>{{ post.title }}</h1>
-        <div>{{ post.text|markdown|safe }}</div>
 
 
+        <div class="post_title">
+            <h1>{{ post.title }}</h1>
+        </div>
+        <div class="post_publication_date">
+            {{ post.publication_date }}
+        </div>
+        <div class="post_text">
+            {{ post.text|markdown|safe }}
+        </div>
 
-{#        <ul>#}
-{#            <li data-id="{{ like_obj.id }}" data-type="post" data-action="like" title="Нравится">#}
-{#                <span class="glyphicon glyphicon-thumbs-up"></span>#}
-{#                <span data-count="like">{{ like_obj.votes.likes.count }}</span>#}
-{#            </li>#}
-{#            <li data-id="{{ like_obj.id }}" data-type="post" data-action="dislike" title="Не нравится">#}
-{#                <span class="glyphicon glyphicon-thumbs-down"></span>#}
-{#                <span data-count="dislike">{{ like_obj.votes.dislikes.count }}</span>#}
-{#            </li>#}
-{#         </ul>#}
 
-        <h1>New comment</h1>
-        <form method="POST" class="post-form">
+        <div class="post_comment">
+        <div class="comment_title">
+            <h1>Comments:</h1>
+            <button  class="new-comment-btn" onclick="show_hide_comment(id_1='post-form')"> + Add comment</button>
+        </div>
+
+        <form method="POST" class="post-form" id="post-form">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="save btn btn-default">Add Comment</button>
@@ -34,6 +36,9 @@
         {% for comment in post.comments.all %}
             {% if user.is_authenticated or comment.approved_comment %}
             <div class="comment">
+
+                <strong>{{ comment.author }}</strong>
+                <p>{{ comment.text|linebreaks }}</p>
                 <div class="date">
                     {{ comment.created_date }}
                     {% if not comment.approved_comment %}
@@ -41,19 +46,32 @@
                         <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
 
                     {% endif %}
+                    <a class="btn btn-default" href="{% url 'comment_edit' pk=comment.pk %}"><span class="glyphicon glyphicon-asterisk">Edit</span></a>
+                    <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove">Delete</span></a>
                 </div>
-                <strong>{{ comment.author }}</strong>
-                <p>{{ comment.text|linebreaks }}</p>
-                <a class="btn btn-default" href="{% url 'comment_edit' pk=comment.pk %}"><span class="glyphicon glyphicon-asterisk">Edit</span></a>
-                <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove">Delete</span></a>
+
             </div>
             {% endif %}
         {% empty %}
             <p>No coments here yet</p>
         {% endfor %}
-        <button type="submit" onclick="location.href='{% url 'blog_page' %}'" >Blog</button>
+        </div>
+
 
     </div>
+    <script>
+    function show_hide_comment(id_1)
+{
+    if(document.getElementById(id_1).style.display=="none")
+    {
+        document.getElementById(id_1).style.display="inline";
+    }
+    else
+    {
+        document.getElementById(id_1).style.display="none";
+    }
+}
+    </script>
 
 
 {% endblock %}

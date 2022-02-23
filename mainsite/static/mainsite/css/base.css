@@ -1,7 +1,10 @@
 header {
-    height: 150px;
     background-color: #C4C4C4;
 
+}
+
+body {
+    background-color: #323232;
 }
 
 .header-btn-nav {
