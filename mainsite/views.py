@@ -43,15 +43,20 @@ def code_examples(request):
 def main_invest(request):
     stocks = Stock.objects.all()
     deposits = Deposit.objects.all()
-    portfolio = Portfolio.objects.get()
+    if Portfolio.objects.exists():
+        portfolio = Portfolio.objects.get()
 
-    investment_calculation(stocks, deposits, portfolio)
-    chart_drawing(stocks, deposits, portfolio)
+        investment_calculation(stocks, deposits, portfolio)
+        chart_drawing(stocks, deposits, portfolio)
 
-    ctx = {
-        'stocks': stocks,
-        'portfolio': portfolio
-    }
+        ctx = {
+            'stocks': stocks,
+            'portfolio': portfolio
+        }
+    else:
+        ctx = {
+            'stocks': stocks
+        }
     return render(request, 'investment/main_invest.html', ctx)
 
 
