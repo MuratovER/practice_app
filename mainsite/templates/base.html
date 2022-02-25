@@ -12,6 +12,8 @@
         <link rel="stylesheet" type="text/css" href="{% static 'mainsite/css/programmig.css' %}"/>
         <link rel="stylesheet" type="text/css" href="{% static 'mainsite/css/eulers_problems.css' %}"/>
         <link rel="stylesheet" type="text/css" href="{% static 'mainsite/css/code_examples.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'mainsite/css/investment.css' %}"/>
+
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <script src="{% static 'mainsite/js/blog.js' %}"></script>
         <script src="{% static 'mainsite/js/euler_problem.js' %}"></script>
@@ -22,13 +24,6 @@
             <button class="header-btn" type="sumbit" onclick="location.href='{% url 'programming' %}'">Programming</button>
             <button class="header-btn" type="sumbit" onclick="location.href='{% url 'blog_page' %}'">Blog</button>
             <button class="header-btn" type="sumbit" onclick="location.href='{% url 'investment' %}'">Invesments</button>
-{#         {% if user.is_authenticated %}#}
-{#              <button type="sumbit" onclick="location.href='{% url 'logout' %}'">Выход</button>#}
-{#              <a href="{% url 'apps_list' %}">Apps</a>#}
-{#         {% else %}#}
-{#              <button type="sumbit" onclick="location.href='{% url 'login' %}'" >Войти</button>#}
-{#            <button type="sumbit" onclick="location.href='{% url 'signup' %}'">Регистрация</button>#}
-{#         {% endif %}#}
         </nav>
         </div>
 
