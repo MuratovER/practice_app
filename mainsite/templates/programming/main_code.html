@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
     <div class="body-btb-programming">
@@ -7,11 +7,12 @@
             <a href="{% url 'euler_problems' %}">
                 <div class="programming-btn-box first-btn-box">
                     <div class="box-btn-picture">
-                        <img src="\..\..\static\svg\tsks-euler.svg" />
+                        <img src="{% static 'img/programming_background/pexels-photo-4245826.jpeg' %}" />
                     </div>
                     <div class="box-btn-title">
-                        <button  class="box-btn-button"> Задачи Эйлера </button>
+                         <h2>Задачи Эйлера</h2>
                     </div>
+                    <hr>
                     <div class="box-btn-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sociis aenean tristique nulla lorem vel. Pellentesque at est quis metus libero gravida. Aliquam nulla interdum praesent fringilla ut tempus, sagittis. Integer viverra sit volutpat, lacus eget nec turpis nibh sed. Ut faucibus vitae posuere sagittis donec senectus faucibus. Viverra vestibulum ligula viverra netus bibendum eget aliquet. Ac, nibh praesent aliquet semper elit imperdiet blandit et. Orci pellentesque consequat rhoncus cras neque dignissim feugiat aliquet. Accumsan tellus pellentesque mauris aenean. Massa diam egestas orci pulvinar egestas felis accumsan, ornare. Ante pellentesque at tellus tristique nunc, fermentum ullamcorper arcu. Fringilla aliquet vestibulum a at eget vel. In nisi, sit velit odio velit sed dignissim odio donec. Tellus tristique augue quam nibh libero laoreet amet, augue.
                     </div>
@@ -20,11 +21,12 @@
             <a href="">
                 <div class="programming-btn-box second-btn-box">
                     <div class="box-btn-picture">
-                        <img src="\..\..\static\svg\portfolio.svg" />
+                        <img src="{% static 'img/programming_background/pexels-photo-461940.jpeg' %}" />
                     </div>
                     <div class="box-btn-title">
-                        <button class="box-btn-button"> Портфолио </button>
+                            <h2>Портфолио</h2>
                     </div>
+                    <hr>
                     <div class="box-btn-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sociis aenean tristique nulla lorem vel. Pellentesque at est quis metus libero gravida. Aliquam nulla interdum praesent fringilla ut tempus, sagittis. Integer viverra sit volutpat, lacus eget nec turpis nibh sed. Ut faucibus vitae posuere sagittis donec senectus faucibus. Viverra vestibulum ligula viverra netus bibendum eget aliquet. Ac, nibh praesent aliquet semper elit imperdiet blandit et. Orci pellentesque consequat rhoncus cras neque dignissim feugiat aliquet. Accumsan tellus pellentesque mauris aenean. Massa diam egestas orci pulvinar egestas felis accumsan, ornare. Ante pellentesque at tellus tristique nunc, fermentum ullamcorper arcu. Fringilla aliquet vestibulum a at eget vel. In nisi, sit velit odio velit sed dignissim odio donec. Tellus tristique augue quam nibh libero laoreet amet, augue.
                     </div>
@@ -33,11 +35,12 @@
             <a href="{% url 'code_examples' %}">
                 <div class="programming-btn-box third-btn-box">
                     <div class="box-btn-picture">
-                        <img src="\..\..\static\svg\code.svg" />
+                        <img src="{% static 'img/programming_background/pexels-photo-1631677.jpeg' %}" />
                     </div>
                     <div class="box-btn-title">
-                       <button class="box-btn-button"> Примеры кода </button>
+                        <h2>Примеры кода</h2>
                     </div>
+                    <hr>
                     <div class="box-btn-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sociis aenean tristique nulla lorem vel. Pellentesque at est quis metus libero gravida. Aliquam nulla interdum praesent fringilla ut tempus, sagittis. Integer viverra sit volutpat, lacus eget nec turpis nibh sed. Ut faucibus vitae posuere sagittis donec senectus faucibus. Viverra vestibulum ligula viverra netus bibendum eget aliquet. Ac, nibh praesent aliquet semper elit imperdiet blandit et. Orci pellentesque consequat rhoncus cras neque dignissim feugiat aliquet. Accumsan tellus pellentesque mauris aenean. Massa diam egestas orci pulvinar egestas felis accumsan, ornare. Ante pellentesque at tellus tristique nunc, fermentum ullamcorper arcu. Fringilla aliquet vestibulum a at eget vel. In nisi, sit velit odio velit sed dignissim odio donec. Tellus tristique augue quam nibh libero laoreet amet, augue.
                     </div>
