@@ -10,7 +10,7 @@ a {
     border-radius: 10px;
     width: calc(50% - 100px);
     padding: 10px;
-    margin:  10px 50px 10px 50px;
+    margin:  30px 50px 30px 50px;
     text-align: center;
 }
 
@@ -19,6 +19,5 @@ a {
     flex-wrap: wrap;
     min-height: 100vh;
     justify-content: space-evenly;
-    background-color: #FFF9F9;
 
 }
