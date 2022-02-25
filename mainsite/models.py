@@ -133,3 +133,4 @@ class Portfolio(models.Model):
     profit = models.FloatField(default=0)
     standartandpoor = models.ImageField(blank=True, null=True)
     revenue_image = models.ImageField(blank=True, null=True)
+    invested = models.FloatField(default=0)

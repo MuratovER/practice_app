@@ -11,12 +11,19 @@ def portfolio_calculation(stocks, deposits, portfolio):
     profit = 0
     first_capital = 0
     full_capital = 0
+
     for stock in stocks:
         full_capital += float(stock.end_value)
         profit += float(stock.profit)
         first_capital += stock.invested
 
+    for deposit in deposits:
+        full_capital += float(deposit.deposit)
+        first_capital += float(deposit.deposit)
+
+    portfolio.invested = first_capital
     portfolio.capital = "%.2f" % full_capital
+
     if first_capital == 0:
         portfolio_calc = 0
     else:

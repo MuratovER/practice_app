@@ -1,0 +1,200 @@
+
+.content-investment-statistic-capital p {
+    margin-top: 10px;
+    color: #8A8A8A;
+}
+
+.content-investment-statistic-capital h4 {
+    color: #C4C4C4;
+}
+
+.content-investment-statistic-capital {
+    justify-content: space-around;
+    display: flex;
+    background-color: #323232;
+    border-radius: 30px;
+    padding: 20px;
+    width: 350px;
+    height: 150px;
+}
+
+.content-investment-statistic-card {
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+
+
+}
+
+.content-investment-statistic-card-capital-img {
+    background-color: #0EB633;
+    height: 30px;
+    width: 30px;
+    margin: 10px 10px 0px 0px;
+    border-radius: 15px;
+}
+
+.content-investment-statistic-profitability {
+    justify-content: space-around;
+    display: flex;
+    background-color: #323232;
+    border-radius: 30px;
+    padding: 20px;
+    width: 350px;
+    height: 150px;
+}
+
+.content-investment-statistic-profitability h4 {
+    color: #C4C4C4;
+}
+
+.content-investment-statistic-profitability p {
+    margin-top: 10px;
+    color: #8A8A8A;
+}
+
+
+.content-investment-statistic-profit {
+    justify-content: space-around;
+    display: flex;
+    background-color: #323232;
+    border-radius: 30px;
+    padding: 20px;
+    width: 350px;
+    height: 150px;
+}
+
+.content-investment-statistic-profit p{
+    margin-top: 10px;
+    color: #8A8A8A;
+}
+
+.content-investment-statistic-profit h4{
+    margin-top: 10px;
+    color: #C4C4C4;
+}
+
+
+.content-investment-statistic-assets {
+    justify-content: space-around;
+    display: flex;
+    background-color: #323232;
+    border-radius: 30px;
+    padding: 20px;
+    width: 350px;
+    height: 150px;
+}
+
+.content-investment-statistic-card-asset-info p {
+    margin-top: 10px;
+    color: #8A8A8A;
+}
+
+.content-investment-statistic-card-asset-info h4 {
+    margin-top: 10px;
+    color: #C4C4C4;
+}
+
+.content-investment-statistic-card-asset-info {
+    text-align: center;
+}
+
+.content-investment-chart {
+    background-color: #323232;
+    padding: 50px;
+    border-radius: 15px;
+    margin: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.content-investment-chart-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content-investment-chart-info h1 {
+    color: #A0A0A0;
+}
+
+.content-investment-chart-info-stockcircle {
+    width: 50px;
+    height: 50px;
+    background-color: #FE5454;
+    border-radius: 30px;
+}
+/*# '#FE5454'=red, '#525AA5'=purple, '#C8CB27'=yellow, '#54FEE9'=blue*/
+.content-investment-chart-info-depositcircle {
+    width: 50px;
+    height: 50px;
+    background-color: #525AA5;
+    border-radius: 30px;
+}
+
+.content-investment-chart-info-bondscircle {
+    width: 50px;
+    height: 50px;
+    background-color: #C8CB27;
+    border-radius: 30px;
+}
+
+.content-investment-chart-info-etfcircle {
+    width: 50px;
+    height: 50px;
+    background-color: #54FEE9;
+    border-radius: 30px;
+}
+
+
+.content-investment-chart-info-circle-deposit,
+.content-investment-chart-info-circle-bonds,
+.content-investment-chart-info-circle-etf,
+.content-investment-chart-info-stock {
+    width: 200px;
+    justify-content: space-between;
+    display: flex;
+    margin: 20px;
+}
+
+
+.content-investment-chart-info-circle-deposit {
+    display: flex;
+    margin: 20px;
+}
+
+.content-investment-chart-info-circle-bonds {
+    display: flex;
+    margin: 20px;
+}
+
+.content-investment-chart-info-circle-etf {
+    display: flex;
+    margin: 20px;
+}
+
+.content-investement-assettab-symbol,
+.content-investement-assettab-amount,
+.content-investement-assettab-invested,
+.content-investement-assettab-invested,
+.content-investement-assettab-curent-price,
+.content-investement-assettab-profit,
+.content-investement-assettab-share {
+    color: #EEEEEE;
+    margin: 30px;
+}
+
+.content-investement-assettab-asset {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.content-investement-assettab {
+    margin: 30px;
+    background-color: #323232;
+    border-radius: 30px;
+}

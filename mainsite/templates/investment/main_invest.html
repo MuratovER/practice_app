@@ -4,39 +4,123 @@
 <div class="content-investment">
 <div class="content-investment-statistic">
         <div class="content-investment-statistic-card">
-            <div class="content-investment-statistic-capital">Capital: {{ portfolio.capital }}</div>
-            <div class="content-investment-statistic-profitability">Profitability: {{ portfolio.profitability}}</div>
-            <div class="content-investment-statistic-profit">Profit: {{ portfolio.profit}} %</div>
-            <div class="content-investment-statistic-assets">Assets: {{ portfolio.assets }}</div>
+            <div class="content-investment-statistic-capital">
+                <div class="content-investment-statistic-card-capital-img">
+                    <img src="" alt="">
+                </div>
+                <div class="content-investment-statistic-card-capital-info">
+                    <p>Capital:</p>
+                    <h4>{{ portfolio.capital }}$</h4>
+                    <p>{{ portfolio.invested }}$ Вложено</p>
+                </div>
+            </div>
+            <div class="content-investment-statistic-profitability">
+                <div class="content-investment-statistic-card-capital-img">
+                    <img src="" alt="">
+                </div>
+                <div class="content-investment-statistic-card-capital-info">
+                    <p>Profitability: </p>
+                    <h4>{{ portfolio.profitability}}$</h4>
+                </div>
+            </div>
+            <div class="content-investment-statistic-profit">
+                <div class="content-investment-statistic-card-capital-img">
+                    <img src="" alt="">
+                </div>
+                <div class="content-investment-statistic-card-capital-info">
+                    <p>Profit: </p>
+                    <h4>{{ portfolio.profit}} %</h4>
+                </div>
+            </div>
+
+            <div class="content-investment-statistic-assets">
+                <div class="content-investment-statistic-card-capital-img">
+                    <img src="" alt="">
+                </div>
+                <div class="content-investment-statistic-card-asset-info">
+                    <p>Assets: </p>
+                    <h4>{{ portfolio.assets }}</h4>
+                    <p>Колличество</p>
+                </div>
+
+            </div>
+
         </div>
 </div>
 <div class="content-investment-chart">
-
-    <img src="{% static "img/chart.png" %}" alt="#">
+    <div class="content-investment-chart-img">
+        <img src="{% static "img/chart.png" %}" alt="#">
+    </div>
+    <div class="content-investment-chart-info">
+        <div class="content-investment-chart-info-stock">
+            <h1>Stocks</h1>
+            <div class="content-investment-chart-info-stockcircle"></div>
+        </div>
+        <div class="content-investment-chart-info-circle-deposit">
+            <h1>Deposit</h1>
+            <div class="content-investment-chart-info-depositcircle"></div>
+        </div>
+        <div class="content-investment-chart-info-circle-bonds">
+           <h1>Bonds</h1>
+            <div class="content-investment-chart-info-bondscircle"></div>
+        </div>
+        <div class="content-investment-chart-info-circle-etf">
+           <h1>ETF</h1>
+            <div class="content-investment-chart-info-etfcircle"></div>
+        </div>
+    </div>
 </div>
 <div class="content-investement-assettab">
+        <div class="content-investement-assettab-asset">
+            <div class="content-investement-assettab-symbol">
+                Symbol:
+            </div>
+            <div class="content-investement-assettab-amount">
+                Amount:
+            </div>
+            <div class="content-investement-assettab-invested">
+                Invested:
+            </div>
+            <div class="content-investement-assettab-invested">
+                End Value:
+            </div>
+            <div class="content-investement-assettab-curent-price">
+                Current_price:
+            </div>
+            <div class="content-investement-assettab-profit">
+                Profit:
+            </div>
+            <div class="content-investement-assettab-share">
+                Share:
+            </div>
+        </div>
     {% for stock in stocks %}
-        <div class="content-investement-assettab-symbol">
-            Symbol: {{ stock.symbol }}
+        <hr>
+        <div class="content-investement-assettab-asset">
+
+            <div class="content-investement-assettab-symbol">
+                {{ stock.symbol }}
+            </div>
+            <div class="content-investement-assettab-amount">
+                {{ stock.amount }}
+            </div>
+            <div class="content-investement-assettab-invested">
+                {{ stock.invested }}
+            </div>
+            <div class="content-investement-assettab-invested">
+                {{ stock.end_value }}
+            </div>
+            <div class="content-investement-assettab-curent-price">
+                {{ stock.curent_price }}
+            </div>
+            <div class="content-investement-assettab-profit">
+                {{ stock.profit }}%
+            </div>
+            <div class="content-investement-assettab-share">
+                {{ stock.share }}%
+            </div>
         </div>
-        <div class="content-investement-assettab-amount">
-            Amount: {{ stock.amount }}
-        </div>
-        <div class="content-investement-assettab-invested">
-            Invested: {{ stock.invested }}
-        </div>
-        <div class="content-investement-assettab-invested">
-            End Value: {{ stock.end_value }}
-        </div>
-        <div class="content-investement-assettab-curent-price">
-            Current_price: {{ stock.curent_price }}
-        </div>
-        <div class="content-investement-assettab-profit">
-            Profit: {{ stock.profit }}%
-        </div>
-        <div class="content-investement-assettab-share">
-            Share: {{ stock.share }}%
-        </div>
+
     {% endfor %}
 </div>
 <div class="content-investment-sandp">
